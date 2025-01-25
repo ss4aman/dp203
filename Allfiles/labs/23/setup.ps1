@@ -57,20 +57,20 @@ $locations = Get-AzLocation | Where-Object {
 }
 
 # Choose a region
-Write-Host "Preparing to deploy. This may take several minutes...";
-$delay = 0, 30, 60, 90, 120 | Get-Random
-Start-Sleep -Seconds $delay # random delay to stagger requests from multi-student classes
-$max_index = $locations.Count - 1
-$rand = (0..$max_index) | Get-Random
+# Write-Host "Preparing to deploy. This may take several minutes...";
+# $delay = 0, 30, 60, 90, 120 | Get-Random
+# Start-Sleep -Seconds $delay # random delay to stagger requests from multi-student classes
+# $max_index = $locations.Count - 1
+# $rand = (0..$max_index) | Get-Random
 
-# Start with preferred region if specified, otherwise choose one at random
-if ($args.count -gt 0 -And $args[0] -in $locations.Location)
-{
-    $Region = $args[0]
-}
-else {
-    $Region = $locations.Get($rand).Location
-}
+# # Start with preferred region if specified, otherwise choose one at random
+# if ($args.count -gt 0 -And $args[0] -in $locations.Location)
+# {
+    $Region = "<regionname>"
+# }
+# else {
+#     $Region = $locations.Get($rand).Location
+# }
 
 # Try to create an Azure Databricks workspace in a region that has capacity
 $stop = 0
@@ -116,7 +116,7 @@ while ($stop -ne 1){
         }
     }
     else {
-        $resourceGroupName = "dp203-$suffix"
+        $resourceGroupName = "<rgname>"
         Write-Host "Creating $resourceGroupName resource group ..."
         New-AzResourceGroup -Name $resourceGroupName -Location $Region | Out-Null
         $dbworkspace = "databricks$suffix"
