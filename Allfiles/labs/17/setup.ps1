@@ -48,7 +48,7 @@ foreach ($provider in $provider_list){
 # Generate unique random suffix
 [string]$suffix =  -join ((48..57) + (97..122) | Get-Random -Count 7 | % {[char]$_})
 Write-Host "Your randomly-generated suffix for Azure resources is $suffix"
-$resourceGroupName = "<rgname>"
+$resourceGroupName = "databricks-1579980"
 
 # Choose a random region
 # Write-Host "Finding an available region. This may take several minutes...";
@@ -66,7 +66,7 @@ $resourceGroupName = "<rgname>"
 # # Start with preferred region if specified, otherwise choose one at random
 # if ($args.count -gt 0 -And $args[0] -in $locations.Location)
 # {
-$Region = "<regionname>"
+$Region = "eastus"
 # }
 # else {
 #     $rand = (0..$max_index) | Get-Random

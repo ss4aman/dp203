@@ -202,9 +202,9 @@
               "displayName": "Database"
             },
             "properties": {
-              "edition": "Standard",
+              "edition": "Basic",
               "collation": "SQL_Latin1_General_CP1_CI_AS",
-              "requestedServiceObjectiveName": "Standard",
+              "requestedServiceObjectiveName": "Basic",
               "sampleName": "AdventureWorksLT"
             },
             "dependsOn": [

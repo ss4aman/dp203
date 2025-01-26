@@ -114,8 +114,8 @@
         "name": "[parameters('eventNsName')]",
         "location": "[variables('location')]",
         "sku": {
-            "name": "Standard",
-            "tier": "Standard",
+            "name": "Basic",
+            "tier": "Basic",
             "capacity": 1
         },
         "properties": {

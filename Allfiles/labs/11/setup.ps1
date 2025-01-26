@@ -79,7 +79,7 @@ foreach ($provider in $provider_list){
 # Generate unique random suffix
 [string]$suffix =  -join ((48..57) + (97..122) | Get-Random -Count 7 | % {[char]$_})
 Write-Host "Your randomly-generated suffix for Azure resources is $suffix"
-$resourceGroupName = "<rgname>"
+$resourceGroupName = "databricks-1579980"
 
 # Choose a random region
 # Write-Host "Finding an available region. This may take several minutes...";
@@ -95,7 +95,7 @@ $resourceGroupName = "<rgname>"
 # }
 # $max_index = $locations.Count - 1
 # $rand = (0..$max_index) | Get-Random
-$Region = "<regionname>"
+$Region = "eastus"
 
 # Test for subscription Azure SQL capacity constraints in randomly selected regions
 # (for some subsription types, quotas are adjusted dynamically based on capacity)
